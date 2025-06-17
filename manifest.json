@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Vantage",
+  "version": "1.0.0",
+  "description": "Vantage gives crypto developers full control over token launches. Stealth deploy, sniper protection, instant relaunch, and supply management across platforms like pump.fun and Raydium.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Vantage"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+} 
