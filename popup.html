@@ -10,9 +10,12 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="profile-section">
-                <img src="icons/icon48.png" alt="Profile Picture" class="profile-picture" id="profilePicture">
-                <span class="username" id="username">John Doe</span>
+            <div class="logo-section">
+                <img src="icons/icon48.png" alt="Vantage Logo" class="logo">
+                <div class="brand-info">
+                    <h1 class="brand-name">Vantage</h1>
+                    <p class="brand-tagline">Solana Token Launcher</p>
+                </div>
             </div>
             <button class="settings-btn" id="settingsBtn" title="Settings">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -24,13 +27,101 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <div class="welcome-message">
-                <h2>Welcome to Vantage</h2>
-                <p>Your personal dashboard extension</p>
+            <div class="home-dashboard">
+                <!-- Action Buttons Grid -->
+                <div class="action-buttons">
+                    <button class="action-btn primary" id="createProjectBtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>Create Project</h3>
+                            <p>Launch a new token</p>
+                        </div>
+                    </button>
+
+                    <button class="action-btn secondary" id="savedProjectsBtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>Saved Projects</h3>
+                            <p>View your drafts</p>
+                        </div>
+                    </button>
+
+                    <button class="action-btn utility" id="getSolBtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M16 8l-4 4-4-4"></path>
+                                <path d="M16 12l-4 4-4-4"></path>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>Get SOL</h3>
+                            <p>Buy Solana tokens</p>
+                        </div>
+                    </button>
+
+                    <button class="action-btn rewards" id="pfRewardsBtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>PF Rewards</h3>
+                            <p>Claim your rewards</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Follow on X Button -->
+                <div class="social-section">
+                    <button class="follow-btn" id="followTwitterBtn">
+                        <div class="follow-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </div>
+                        <div class="follow-content">
+                            <span class="follow-text">Follow on</span>
+                            <span class="follow-platform">𝕏</span>
+                        </div>
+                        <div class="follow-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span class="stat-label">Projects Created</span>
+                        <span class="stat-value" id="projectCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Launches</span>
+                        <span class="stat-value" id="launchCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Success Rate</span>
+                        <span class="stat-value" id="successRate">--%</span>
+                    </div>
+                </div>
             </div>
         </main>
 
-        <!-- Footer -->
+        <!-- Footer Navigation -->
         <footer class="footer">
             <button class="footer-btn active" id="homeBtn" title="Home">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -83,6 +174,24 @@
                             <span class="toggle-slider"></span>
                         </label>
                         <span class="toggle-label">Light</span>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="notificationsToggle">Notifications</label>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="notificationsToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="autoSaveToggle">Auto-save Projects</label>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="autoSaveToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
                     </div>
                 </div>
             </div>

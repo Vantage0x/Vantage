@@ -5,6 +5,20 @@ const settingsBtn = document.getElementById('settingsBtn');
 const settingsModal = document.getElementById('settingsModal');
 const closeModal = document.getElementById('closeModal');
 const themeToggle = document.getElementById('themeToggle');
+const notificationsToggle = document.getElementById('notificationsToggle');
+const autoSaveToggle = document.getElementById('autoSaveToggle');
+
+// Home action buttons
+const createProjectBtn = document.getElementById('createProjectBtn');
+const savedProjectsBtn = document.getElementById('savedProjectsBtn');
+const getSolBtn = document.getElementById('getSolBtn');
+const pfRewardsBtn = document.getElementById('pfRewardsBtn');
+const followTwitterBtn = document.getElementById('followTwitterBtn');
+
+// Stats elements
+const projectCount = document.getElementById('projectCount');
+const launchCount = document.getElementById('launchCount');
+const successRate = document.getElementById('successRate');
 
 // Footer navigation buttons
 const homeBtn = document.getElementById('homeBtn');
@@ -12,25 +26,43 @@ const walletBtn = document.getElementById('walletBtn');
 const historyBtn = document.getElementById('historyBtn');
 const shieldBtn = document.getElementById('shieldBtn');
 
-// Load user data from storage
+// Load user data and stats from storage
 function loadUserData() {
-    chrome.storage.sync.get(['username', 'profilePicture', 'theme'], (result) => {
-        if (result.username) {
-            username.textContent = result.username;
-        }
-        if (result.profilePicture) {
-            profilePicture.src = result.profilePicture;
-        } else {
-            // Default to Vantage logo if no custom profile picture is set
-            profilePicture.src = 'icons/icon48.png';
-        }
-        
+    chrome.storage.sync.get(['theme', 'notifications', 'autoSave', 'projects', 'launches', 'successfulLaunches'], (result) => {
         // Load theme preference
         if (result.theme === 'light') {
             document.body.classList.add('light-mode');
             themeToggle.checked = true;
         }
+        
+        // Load settings
+        if (result.notifications !== undefined) {
+            notificationsToggle.checked = result.notifications;
+        }
+        if (result.autoSave !== undefined) {
+            autoSaveToggle.checked = result.autoSave;
+        }
+        
+        // Load stats
+        const projects = result.projects || [];
+        const launches = result.launches || 0;
+        const successfulLaunches = result.successfulLaunches || 0;
+        
+        updateStats(projects.length, launches, successfulLaunches);
     });
+}
+
+// Update stats display
+function updateStats(projects, launches, successful) {
+    projectCount.textContent = projects;
+    launchCount.textContent = launches;
+    
+    if (launches > 0) {
+        const rate = Math.round((successful / launches) * 100);
+        successRate.textContent = `${rate}%`;
+    } else {
+        successRate.textContent = '--%';
+    }
 }
 
 // Settings button click handler
@@ -60,42 +92,15 @@ themeToggle.addEventListener('change', () => {
     }
 });
 
-// Profile picture click handler for changing profile picture
-profilePicture.addEventListener('click', () => {
-    const imageUrl = prompt('Enter image URL for profile picture:');
-    if (imageUrl && imageUrl.trim()) {
-        profilePicture.src = imageUrl.trim();
-        // Save to storage
-        chrome.storage.sync.set({ profilePicture: imageUrl.trim() });
-    }
+// Notifications toggle handler
+notificationsToggle.addEventListener('change', () => {
+    chrome.storage.sync.set({ notifications: notificationsToggle.checked });
 });
 
-// Initialize the extension
-document.addEventListener('DOMContentLoaded', () => {
-    loadUserData();
+// Auto save toggle handler
+autoSaveToggle.addEventListener('change', () => {
+    chrome.storage.sync.set({ autoSave: autoSaveToggle.checked });
 });
-
-// Add some interactive feedback
-profilePicture.addEventListener('mouseenter', () => {
-    profilePicture.style.transform = 'scale(1.05)';
-    profilePicture.style.transition = 'transform 0.2s ease';
-});
-
-profilePicture.addEventListener('mouseleave', () => {
-    profilePicture.style.transform = 'scale(1)';
-});
-
-// Add click feedback for username
-username.addEventListener('click', () => {
-    const newUsername = prompt('Enter your username:', username.textContent);
-    if (newUsername && newUsername.trim()) {
-        username.textContent = newUsername.trim();
-        chrome.storage.sync.set({ username: newUsername.trim() });
-    }
-});
-
-username.style.cursor = 'pointer';
-profilePicture.style.cursor = 'pointer';
 
 // Footer navigation handlers
 function setActiveFooterBtn(activeBtn) {
@@ -109,24 +114,188 @@ function setActiveFooterBtn(activeBtn) {
 
 homeBtn.addEventListener('click', () => {
     setActiveFooterBtn(homeBtn);
-    // Show home content (already visible by default)
+    // Already on home page
     console.log('Home clicked');
 });
 
 walletBtn.addEventListener('click', () => {
     setActiveFooterBtn(walletBtn);
-    // TODO: Show wallet interface
-    console.log('Wallet clicked');
+    addButtonFeedback(walletBtn);
+    // TODO: Navigate to wallet interface
+    console.log('Wallet clicked - Navigate to wallet page');
+    showNotification('Opening wallet...', 'info');
 });
 
 historyBtn.addEventListener('click', () => {
     setActiveFooterBtn(historyBtn);
-    // TODO: Show past launches history
-    console.log('History clicked');
+    addButtonFeedback(historyBtn);
+    // TODO: Navigate to launch history
+    console.log('History clicked - Navigate to launch history');
+    showNotification('Loading launch history...', 'info');
 });
 
 shieldBtn.addEventListener('click', () => {
     setActiveFooterBtn(shieldBtn);
-    // TODO: Show sniper shield detection
-    console.log('Shield clicked');
-}); 
+    addButtonFeedback(shieldBtn);
+    // TODO: Navigate to sniper shield
+    console.log('Shield clicked - Navigate to sniper protection');
+    showNotification('Opening sniper protection...', 'info');
+});
+
+// Home action button handlers
+createProjectBtn.addEventListener('click', () => {
+    addButtonFeedback(createProjectBtn);
+    // TODO: Navigate to create project page
+    console.log('Create Project clicked - Navigate to project creation');
+    // Simulate navigation for now
+    showNotification('Opening project creator...', 'success');
+});
+
+savedProjectsBtn.addEventListener('click', () => {
+    addButtonFeedback(savedProjectsBtn);
+    // TODO: Navigate to saved projects page
+    console.log('Saved Projects clicked - Navigate to saved projects');
+    showNotification('Loading saved projects...', 'info');
+});
+
+getSolBtn.addEventListener('click', () => {
+    addButtonFeedback(getSolBtn);
+    // TODO: Navigate to SOL purchase page
+    console.log('Get SOL clicked - Navigate to SOL purchase');
+    showNotification('Opening SOL purchase options...', 'info');
+});
+
+pfRewardsBtn.addEventListener('click', () => {
+    addButtonFeedback(pfRewardsBtn);
+    // TODO: Navigate to PF rewards page
+    console.log('PF Rewards clicked - Navigate to pump.fun rewards');
+    showNotification('Loading PF rewards...', 'info');
+});
+
+followTwitterBtn.addEventListener('click', () => {
+    addButtonFeedback(followTwitterBtn);
+    // Open Twitter/X page in new tab
+    chrome.tabs.create({ url: 'https://x.com/Vantage0x' });
+    showNotification('Opening @Vantage0x on X...', 'success');
+});
+
+// Add visual feedback for button clicks
+function addButtonFeedback(button) {
+    button.style.transform = 'scale(0.95)';
+    button.style.transition = 'transform 0.1s ease';
+    
+    setTimeout(() => {
+        button.style.transform = 'scale(1)';
+    }, 100);
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    // Style the notification
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--accent-color);
+        color: white;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+    `;
+    
+    // Add type-specific colors
+    if (type === 'success') {
+        notification.style.background = '#10b981';
+    } else if (type === 'error') {
+        notification.style.background = '#ef4444';
+    } else if (type === 'warning') {
+        notification.style.background = '#f59e0b';
+    }
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.opacity = '1';
+        notification.style.transform = 'translateX(0)';
+    }, 10);
+    
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Add hover effects for action buttons
+function addHoverEffects() {
+    const actionButtons = document.querySelectorAll('.action-btn');
+    
+    actionButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.transform = 'translateY(-2px)';
+            button.style.transition = 'transform 0.2s ease';
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Add hover effect for follow button
+    followTwitterBtn.addEventListener('mouseenter', () => {
+        followTwitterBtn.style.transform = 'translateY(-2px)';
+        followTwitterBtn.style.transition = 'transform 0.2s ease';
+    });
+    
+    followTwitterBtn.addEventListener('mouseleave', () => {
+        followTwitterBtn.style.transform = 'translateY(0)';
+    });
+}
+
+// Simulate some demo data for stats (remove this in production)
+function loadDemoStats() {
+    // This is just for demo purposes - remove when implementing real data
+    setTimeout(() => {
+        updateStats(3, 5, 4); // 3 projects, 5 launches, 4 successful (80% success rate)
+    }, 1000);
+}
+
+// Initialize the extension
+document.addEventListener('DOMContentLoaded', () => {
+    loadUserData();
+    addHoverEffects();
+    loadDemoStats(); // Remove this line when implementing real stats
+    
+    // Add some startup animation
+    setTimeout(() => {
+        document.querySelector('.home-dashboard').style.opacity = '1';
+        document.querySelector('.home-dashboard').style.transform = 'translateY(0)';
+    }, 100);
+});
+
+// Add CSS for startup animation
+const style = document.createElement('style');
+style.textContent = `
+    .home-dashboard {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+`;
+document.head.appendChild(style); 
