@@ -11,11 +11,11 @@
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --error-color: #ef4444;
-    --dark-bg: #0f0f0f;
-    --dark-surface: #1a1a1a;
-    --dark-border: #333;
-    --dark-text: #e2e8f0;
-    --dark-text-secondary: #a0aec0;
+    --dark-bg: #0a0a0b;
+    --dark-surface: #141418;
+    --dark-border: #2a2a2e;
+    --dark-text: #ffffff;
+    --dark-text-secondary: #9ca3af;
     --light-bg: #f7fafc;
     --light-surface: #ffffff;
     --light-border: #e1e5e9;
@@ -72,7 +72,7 @@ body.light-mode .container {
     justify-content: space-between;
     align-items: center;
     padding: 20px 24px;
-    background: var(--dark-surface);
+    background: var(--dark-bg);
     border-bottom: 1px solid var(--dark-border);
     transition: all 0.3s ease;
 }
@@ -106,16 +106,15 @@ body.light-mode .header {
 .brand-name {
     font-size: 18px;
     font-weight: 700;
-    color: var(--dark-text);
+    color: white;
     margin: 0;
+}
+
+body.light-mode .brand-name {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-body.light-mode .brand-name {
-    color: var(--light-text);
 }
 
 .brand-tagline {
@@ -204,23 +203,27 @@ body.light-mode .action-btn {
 
 .action-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 body.light-mode .action-btn:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: var(--light-surface);
 }
 
 .action-btn.primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
     color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
 .action-btn.primary:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #7c8ef0 0%, #8a5fb8 100%);
 }
 
 .action-btn.secondary {
@@ -300,7 +303,7 @@ body.light-mode .btn-content p {
 .follow-btn {
     width: 100%;
     background: #000000;
-    border: 1px solid #333;
+    border: 1px solid #2a2a2e;
     border-radius: 12px;
     padding: 16px 20px;
     cursor: pointer;
@@ -311,17 +314,20 @@ body.light-mode .btn-content p {
     color: white;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 body.light-mode .follow-btn {
     background: #1da1f2;
     border: 1px solid #1da1f2;
+    box-shadow: 0 4px 15px rgba(29, 161, 242, 0.2);
 }
 
 .follow-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     background: #1a1a1a;
+    border-color: #3a3a3e;
 }
 
 body.light-mode .follow-btn:hover {
@@ -391,6 +397,7 @@ body.light-mode .follow-btn:hover {
     border-radius: 12px;
     padding: 16px;
     margin-top: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 body.light-mode .stats-section {
@@ -428,7 +435,7 @@ body.light-mode .stat-label {
 /* Footer Styles */
 .footer {
     padding: 16px 16px;
-    background: var(--dark-surface);
+    background: var(--dark-bg);
     border-top: 1px solid var(--dark-border);
     display: flex;
     justify-content: space-around;
