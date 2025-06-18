@@ -203,8 +203,8 @@ body.light-mode .action-btn {
 
 .action-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: #4a4a4e;
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -214,32 +214,33 @@ body.light-mode .action-btn:hover {
 }
 
 .action-btn.primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
+    background: var(--dark-surface);
+    border: 1px solid #3a3a3e;
     color: white;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .action-btn.primary:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #7c8ef0 0%, #8a5fb8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #4a4a4e;
 }
 
 .action-btn.secondary {
-    border-color: var(--accent-color);
+    border-color: #2a4d4a;
 }
 
 .action-btn.secondary .btn-icon svg {
-    stroke: var(--accent-color);
+    stroke: #4a7c7a;
 }
 
 .action-btn.utility .btn-icon svg {
-    stroke: var(--warning-color);
+    stroke: #8a6914;
 }
 
 .action-btn.rewards .btn-icon svg {
-    stroke: var(--success-color);
+    stroke: #2d5a3d;
 }
 
 .btn-icon {
@@ -302,7 +303,7 @@ body.light-mode .btn-content p {
 
 .follow-btn {
     width: 100%;
-    background: #000000;
+    background: var(--dark-surface);
     border: 1px solid #2a2a2e;
     border-radius: 12px;
     padding: 16px 20px;
@@ -314,7 +315,7 @@ body.light-mode .btn-content p {
     color: white;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 body.light-mode .follow-btn {
@@ -325,8 +326,8 @@ body.light-mode .follow-btn {
 
 .follow-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    background: #1a1a1a;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05);
     border-color: #3a3a3e;
 }
 
@@ -428,7 +429,7 @@ body.light-mode .stat-label {
 .stat-value {
     font-size: 18px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #8b9dc3;
     text-align: center;
 }
 
@@ -469,14 +470,14 @@ body.light-mode .footer-btn {
 }
 
 .footer-btn:hover {
-    background: rgba(102, 126, 234, 0.1);
-    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.05);
+    color: #8b9dc3;
     transform: translateY(-1px);
 }
 
 .footer-btn.active {
-    color: var(--primary-color);
-    background: rgba(102, 126, 234, 0.1);
+    color: #8b9dc3;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .footer-btn svg {
