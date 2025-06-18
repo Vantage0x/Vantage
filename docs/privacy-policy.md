@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Effective Date:** 6/18/25  
-**Last Updated:** 6/23/25
+**Last Updated:** 6/18/25
 
 ## Introduction
 

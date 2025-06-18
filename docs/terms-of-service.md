@@ -1,7 +1,7 @@
 # Terms of Service
 
-**Effective Date:** 6/21/25  
-**Last Updated:** 6/24/25
+**Effective Date:** 6/18/25  
+**Last Updated:** 6/18/25
 
 ## Agreement to Terms
 
