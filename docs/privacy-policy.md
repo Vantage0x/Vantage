@@ -1,7 +1,7 @@
 # Privacy Policy
 
-**Effective Date:** [Date]  
-**Last Updated:** [Date]
+**Effective Date:** 6/18/25  
+**Last Updated:** 6/23/25
 
 ## Introduction
 
@@ -112,7 +112,7 @@ If you have questions about this Privacy Policy, please contact us:
 
 - **GitHub Issues**: [https://github.com/Vantage0x/Vantage/issues](https://github.com/Vantage0x/Vantage/issues)
 - **Twitter**: [@Vantage0x](https://x.com/Vantage0x)
-- **Email**: [Contact information to be added]
+- **Email**: vantage.support@gmail.com
 
 ## Legal Compliance
 

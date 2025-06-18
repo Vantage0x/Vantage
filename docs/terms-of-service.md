@@ -1,7 +1,7 @@
 # Terms of Service
 
-**Effective Date:** [Date]  
-**Last Updated:** [Date]
+**Effective Date:** 6/21/25  
+**Last Updated:** 6/24/25
 
 ## Agreement to Terms
 
@@ -194,7 +194,7 @@ For questions about these Terms, please contact us:
 
 - **GitHub Issues**: [https://github.com/Vantage0x/Vantage/issues](https://github.com/Vantage0x/Vantage/issues)
 - **Twitter**: [@Vantage0x](https://x.com/Vantage0x)
-- **Email**: [Contact information to be added]
+- **Email**: vantage.support@gmail.com
 
 ## Miscellaneous
 
