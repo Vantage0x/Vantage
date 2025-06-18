@@ -451,7 +451,7 @@ body.light-mode .footer {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 6px 4px 4px 4px;
     border-radius: 6px;
     color: var(--dark-text-secondary);
     transition: all 0.2s ease;
