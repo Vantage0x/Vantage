@@ -172,7 +172,7 @@ body.light-mode .settings-btn {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 20px 24px;
+    padding: 16px 20px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -180,7 +180,7 @@ body.light-mode .settings-btn {
 .home-dashboard {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     height: 100%;
 }
 
@@ -188,20 +188,20 @@ body.light-mode .settings-btn {
 .action-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
 }
 
 .action-btn {
     background: var(--dark-surface);
     border: 1px solid var(--dark-border);
     border-radius: 12px;
-    padding: 16px 12px;
+    padding: 14px 10px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -256,16 +256,16 @@ body.light-mode .action-btn:hover {
 }
 
 .btn-icon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .btn-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     stroke: var(--dark-text);
     transition: all 0.2s ease;
 }
@@ -310,7 +310,7 @@ body.light-mode .btn-content p {
 
 /* Follow on X Button */
 .social-section {
-    margin: 8px 0;
+    margin: 4px 0;
 }
 
 .follow-btn {
@@ -318,7 +318,7 @@ body.light-mode .btn-content p {
     background: var(--dark-surface);
     border: 1px solid #2a2a2e;
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 12px 16px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
@@ -408,7 +408,7 @@ body.light-mode .follow-btn:hover {
     background: var(--dark-surface);
     border: 1px solid var(--dark-border);
     border-radius: 12px;
-    padding: 16px;
+    padding: 12px;
     margin-top: auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -423,7 +423,7 @@ body.light-mode .stats-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     flex: 1;
 }
 
@@ -439,7 +439,7 @@ body.light-mode .stat-label {
 }
 
 .stat-value {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: #8b9dc3;
     text-align: center;
