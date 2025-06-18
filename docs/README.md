@@ -26,6 +26,8 @@ This documentation covers everything you need to know about using, contributing 
 ### Legal & Compliance
 - [📄 **License**](../LICENSE) - MIT License details
 - [⚠️ **Disclaimer**](disclaimer.md) - Important legal disclaimers and risk warnings
+- [🔒 **Privacy Policy**](privacy-policy.md) - How we collect, use, and protect your data
+- [📋 **Terms of Service**](terms-of-service.md) - User agreement and service terms
 
 ## 🎯 What is Vantage?
 

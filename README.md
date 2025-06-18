@@ -1,14 +1,17 @@
 # Vantage Chrome Extension
 
-A simplistic Chrome extension with a clean homepage interface featuring a header with profile picture, username, and settings gear icon, plus a footer.
+🚀 **The premier Chrome extension for Solana developers** to deploy and manage memecoins on pump.fun with enhanced security, speed, and control.
 
-## Features
+> **Open Source** • **MIT Licensed** • **Built by developers, for developers**
 
-- **Clean Interface**: Minimalist design with a beautiful gradient background
-- **Profile Section**: Customizable profile picture and username
-- **Interactive Settings**: Settings gear icon with hover animations
-- **Persistent Storage**: User preferences saved using Chrome's storage API
-- **Responsive Design**: Adapts to different screen sizes
+## ✨ Key Features
+
+- 🥷 **Stealth Deploy** - Preconfigure metadata and contracts before going live
+- 🛡️ **Sniper Protection** - Advanced bot protection during token launches
+- 💰 **Multi-Wallet Distribution** - Distribute token supply across multiple wallets
+- 🔄 **Instant Relaunch** - Quickly recover from failed launches
+- 🎨 **Custom Metadata** - Full control over token name, ticker, image, and description
+- 💎 **Transparent Pricing** - 0.015 SOL Vantage fee (0.035 SOL total including pump.fun)
 
 ## Installation
 
@@ -76,6 +79,33 @@ To modify the extension:
 3. Click the refresh icon on the Vantage extension card
 4. Test your changes by clicking the extension icon
 
+## 📚 Documentation
+
+For comprehensive documentation, visit our [docs folder](docs/):
+
+- **[Overview](docs/overview.md)** - Complete project overview and problem statement
+- **[Installation Guide](docs/installation.md)** - Detailed installation instructions
+- **[How to Use](docs/how-to-use.md)** - Complete usage guide with examples
+- **[Features](docs/features.md)** - Detailed feature breakdown
+- **[FAQ](docs/faq.md)** - Frequently asked questions
+
+## ⚖️ Legal
+
+- **[Privacy Policy](docs/privacy-policy.md)** - How we handle your data
+- **[Terms of Service](docs/terms-of-service.md)** - User agreement and service terms
+- **[Disclaimer](docs/disclaimer.md)** - Important legal and risk information
+- **[License](LICENSE)** - MIT License details
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
+
+## 📞 Support
+
+- **Documentation**: [docs/](docs/)
+- **Issues**: [GitHub Issues](https://github.com/Vantage0x/Vantage/issues)
+- **Twitter**: [@Vantage0x](https://x.com/Vantage0x)
+
 ## License
 
-This project is open source and available under the MIT License. 
+This project is open source and available under the [MIT License](LICENSE). 
