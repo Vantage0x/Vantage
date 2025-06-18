@@ -13,6 +13,7 @@ const createProjectBtn = document.getElementById('createProjectBtn');
 const savedProjectsBtn = document.getElementById('savedProjectsBtn');
 const getSolBtn = document.getElementById('getSolBtn');
 const pfRewardsBtn = document.getElementById('pfRewardsBtn');
+const docBtn = document.getElementById('docBtn');
 const followTwitterBtn = document.getElementById('followTwitterBtn');
 
 // Stats elements
@@ -170,6 +171,13 @@ pfRewardsBtn.addEventListener('click', () => {
     // TODO: Navigate to PF rewards page
     console.log('PF Rewards clicked - Navigate to pump.fun rewards');
     showNotification('Loading PF rewards...', 'info');
+});
+
+docBtn.addEventListener('click', () => {
+    addButtonFeedback(docBtn);
+    // Open documentation page in new tab
+    chrome.tabs.create({ url: 'https://github.com/Vantage0x/Vantage/blob/main/docs/how-to-use.md' });
+    showNotification('Opening documentation...', 'success');
 });
 
 followTwitterBtn.addEventListener('click', () => {

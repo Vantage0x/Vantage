@@ -172,7 +172,8 @@ body.light-mode .settings-btn {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 16px 20px 12px 20px;
+    justify-content: center;
+    padding: 20px 20px 20px 20px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -180,8 +181,7 @@ body.light-mode .settings-btn {
 .home-dashboard {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    height: 100%;
+    gap: 8px;
 }
 
 /* Action Buttons Grid */
@@ -308,11 +308,90 @@ body.light-mode .btn-content p {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* Follow on X Button */
+/* Social Actions Section */
 .social-section {
-    margin: 16px 0;
+    margin: 4px 0 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
+/* Documentation Button */
+.doc-btn {
+    width: 100%;
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .doc-btn {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.doc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #3a3a3e;
+}
+
+body.light-mode .doc-btn:hover {
+    background: #5a6fd8;
+    box-shadow: 0 12px 30px rgba(90, 111, 216, 0.3);
+}
+
+.doc-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex: 1;
+}
+
+.doc-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.doc-subtext {
+    font-size: 11px;
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.doc-arrow {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doc-arrow svg {
+    width: 16px;
+    height: 16px;
+    stroke: white;
+    transition: transform 0.2s ease;
+}
+
+.doc-btn:hover .doc-arrow svg {
+    transform: translate(2px, -2px);
+}
+
+/* Follow on X Button */
 .follow-btn {
     width: 100%;
     background: var(--dark-surface);
@@ -387,7 +466,7 @@ body.light-mode .follow-btn:hover {
     transform: translate(2px, -2px);
 }
 
-/* Stats Section */
+/* Stats Section - Now inside main content */
 .stats-section {
     display: flex;
     justify-content: space-between;
@@ -395,7 +474,7 @@ body.light-mode .follow-btn:hover {
     border: 1px solid var(--dark-border);
     border-radius: 12px;
     padding: 12px;
-    margin-top: 0;
+    margin: 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
