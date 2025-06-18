@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vantage Extension Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .preview-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .extension-frame {
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            display: inline-block;
+            background: white;
+        }
+        iframe {
+            border: none;
+            display: block;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: left;
+            max-width: 400px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <h1>🚀 Vantage Extension Preview</h1>
+        <p>Here's how your Chrome extension will look:</p>
+        
+        <div class="extension-frame">
+            <iframe src="popup.html" width="400" height="600"></iframe>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 To Test in Chrome:</h3>
+            <ol>
+                <li>Open Chrome and go to <code>chrome://extensions/</code></li>
+                <li>Enable "Developer mode" (top right toggle)</li>
+                <li>Click "Load unpacked" and select this folder</li>
+                <li>Click the Vantage extension icon in the toolbar</li>
+                <li>Test all the buttons and features!</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html> 

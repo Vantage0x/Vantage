@@ -97,6 +97,18 @@ body.light-mode .header {
     transition: all 0.2s ease;
 }
 
+.logo-light {
+    display: none;
+}
+
+body.light-mode .logo-dark {
+    display: none;
+}
+
+body.light-mode .logo-light {
+    display: block;
+}
+
 .brand-info {
     display: flex;
     flex-direction: column;
