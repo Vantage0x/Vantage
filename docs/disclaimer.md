@@ -233,7 +233,7 @@ By using Vantage, you acknowledge that:
 
 ---
 
-**Last Updated**: June 2024  
+**Last Updated**: June 2025  
 **Version**: 1.0
 
 *This disclaimer is part of the terms of use for Vantage. By using the software, you agree to be bound by these terms. If you do not agree, do not use Vantage.*
