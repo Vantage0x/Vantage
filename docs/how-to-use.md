@@ -5,7 +5,9 @@ This comprehensive guide will walk you through using Vantage to deploy your firs
 ## 📋 Table of Contents
 
 - [Getting Started](#getting-started)
+- [Navigation Overview](#navigation-overview)
 - [First Launch Walkthrough](#first-launch-walkthrough)
+- [Dashboard Features](#dashboard-features)
 - [Advanced Features](#advanced-features)
 - [Best Practices](#best-practices)
 - [Troubleshooting](#troubleshooting)
@@ -17,25 +19,64 @@ This comprehensive guide will walk you through using Vantage to deploy your firs
 ### Prerequisites
 Before using Vantage, ensure you have:
 - ✅ **Vantage Extension** installed ([Installation Guide](installation.md))
-- ✅ **Solana Wallet** (Phantom, Solflare, or compatible wallet)
-- ✅ **SOL Balance** (minimum 0.1 SOL recommended for testing)
+- ✅ **SOL for funding** (minimum 0.1 SOL recommended for testing)
 - ✅ **pump.fun Account** (create at [pump.fun](https://pump.fun))
 
 ### Initial Setup
 
-#### 1. Connect Your Wallet
+#### 1. Open Vantage
 1. **Click** the Vantage icon in your Chrome toolbar
-2. **Click** "Connect Wallet" 
-3. **Select** your preferred Solana wallet (Phantom recommended)
-4. **Approve** the connection in your wallet
-5. **Verify** your wallet address appears in Vantage
+2. **Familiarize** yourself with the main dashboard
+3. **Access** wallet creation tools within the extension
 
-#### 2. Check Your Balance
+#### 2. Funding Your Wallets
 - **Minimum Required**: 0.035 SOL per launch
 - **Recommended**: 0.1+ SOL for multiple attempts
 - **Fee Breakdown**: 
   - Vantage Fee: 0.015 SOL
   - pump.fun Fee: 0.02 SOL
+- **Funding Method**: Use the SOL disperser feature to fund created wallets
+
+---
+
+## 🧭 Navigation Overview
+
+Vantage features an intuitive navigation system designed for efficiency and ease of use.
+
+### Main Navigation Structure
+
+```
+🏠 Home Dashboard (Main Hub)
+├── 🚀 Create Project (Token Creation Workflow)
+│   ├── 📝 Token Metadata (Name, Symbol, Image)
+│   ├── 💼 Project Wallets (Multi-wallet Setup)
+│   └── 📊 Project Dashboard (Analytics & Trading)
+├── 📁 Saved Projects (Draft Management)
+├── 💰 Get SOL (Wallet Funding)
+├── 🎁 PF Rewards (Reward Management)
+├── 📈 Launch History (Past Launches)
+└── 🛡️ Sniper Shield (Bot Protection)
+```
+
+### Navigation Features
+
+#### Smart Footer Navigation
+- **Home Button** 🏠: Return to main dashboard
+- **Shield Button** 🛡️: Access sniper protection
+- **History Button** 📈: View launch history
+- **Disperser Button** 💼: Wallet management (future feature)
+
+#### Contextual Navigation
+- **Footer Visibility**: Only shows on main screens (Home, Shield, History, Disperser)
+- **Workflow Navigation**: Hidden during project creation for focused workflow
+- **Smart Back Buttons**: Always know how to return to previous screen
+- **State Preservation**: Your work is saved when navigating between screens
+
+#### Navigation Tips
+- **Always Visible Path Home**: Every screen has a clear path back to home
+- **Breadcrumb Awareness**: Current location always indicated
+- **Quick Access**: Settings accessible from any screen with header
+- **Mobile Optimized**: Touch-friendly navigation on mobile browsers
 
 ---
 
@@ -46,9 +87,9 @@ Let's walk through creating and launching your first token using Vantage's steal
 ### Step 1: Create New Launch Configuration
 
 1. **Open Vantage** by clicking the extension icon
-2. **Click** "New Launch" or the "+" button
-3. **Select Platform**: Choose "pump.fun" (default)
-4. **Choose Launch Type**: Select "Stealth Deploy" (recommended for first launch)
+2. **Navigate to Home**: Ensure you're on the main dashboard
+3. **Click** "Create Project" button
+4. **Select Platform**: Choose "pump.fun" (default)
 
 ### Step 2: Configure Token Metadata
 
@@ -61,7 +102,7 @@ Description: "The most awesome memecoin on Solana! 🚀"
 
 **Best Practices:**
 - **Name**: Keep it memorable and brandable (max 32 characters)
-- **Symbol**: 3-6 characters, all caps, unique
+- **Symbol**: 3-6 characters
 - **Description**: Engaging, community-focused, use emojis sparingly
 
 #### Token Image
@@ -76,7 +117,27 @@ Description: "The most awesome memecoin on Solana! 🚀"
 - **File Size**: Under 5MB
 - **Content**: Original artwork, no copyrighted material
 
-### Step 3: Configure Launch Settings
+### Step 3: Configure Project Wallets
+
+#### Multi-Wallet Setup (Recommended)
+1. **Navigate** to "Project Wallets" from metadata screen
+2. **Click** "Create Wallets" button
+3. **Set Quantity**: Choose number of wallets (1-10 recommended)
+
+**Example Distribution:**
+```
+Wallet 1 (Main): 60% of dev allocation
+Wallet 2 (Marketing): 25% of dev allocation  
+Wallet 3 (Team): 15% of dev allocation
+```
+
+#### Wallet Management Features
+- **Automatic Generation**: Secure wallet creation
+- **Address Display**: Full and abbreviated address views
+- **Private Key Access**: Secure private key management
+- **Balance Tracking**: Real-time SOL balance monitoring
+
+### Step 4: Configure Launch Settings
 
 #### Supply Distribution
 ```
@@ -85,41 +146,19 @@ Initial Liquidity: 85% (850M tokens)
 Dev Allocation: 15% (150M tokens)
 ```
 
-#### Multi-Wallet Setup (Optional but Recommended)
-1. **Enable** "Multi-Wallet Distribution"
-2. **Add Wallet Addresses** (up to 5 wallets)
-3. **Set Distribution Percentages**:
-   ```
-   Wallet 1 (Main): 60% of dev allocation
-   Wallet 2 (Marketing): 25% of dev allocation  
-   Wallet 3 (Team): 15% of dev allocation
-   ```
-
 #### Sniper Protection
-1. **Enable** "Advanced Sniper Protection" ✅
-2. **Set Protection Duration**: 60 seconds (recommended)
-3. **Configure Sensitivity**: "High" for maximum protection
+1. **Navigate** to Sniper Shield from footer
+2. **Enable** "Advanced Sniper Protection" ✅
+3. **Set Protection Duration**: 60 seconds (recommended)
+4. **Configure Sensitivity**: "High" for maximum protection
 
-### Step 4: Review and Prepare
+### Step 5: Review and Prepare
 
-1. **Review** all settings in the "Summary" tab
-2. **Check** fee calculation (should show 0.035 SOL total)
-3. **Verify** wallet balance is sufficient
-4. **Click** "Prepare Launch" to enter stealth mode
-
-### Step 5: Stealth Mode Preparation
-
-Once you click "Prepare Launch":
-- ⏳ **Configuration Saved**: All settings stored locally
-- 🥷 **Stealth Mode Active**: No blockchain activity yet
-- ✅ **Ready to Deploy**: One-click launch when ready
-- 🔄 **Editable**: Can still modify settings
-
-**In Stealth Mode, you can:**
-- Edit metadata and settings
-- Test different configurations
-- Wait for optimal market conditions
-- Coordinate with your community
+1. **Navigate** back to project management
+2. **Review** all settings in the project overview
+3. **Check** fee calculation (should show 0.035 SOL total)
+4. **Verify** wallet balance is sufficient
+5. **Click** "Deploy Metadata" to prepare launch
 
 ### Step 6: Execute the Launch
 
@@ -138,57 +177,135 @@ When you're ready to go live:
 
 ---
 
-## 🔧 Advanced Features
+## 📊 Dashboard Features
 
-### Instant Relaunch
+### Accessing the Dashboard
 
-If your launch doesn't go as planned:
+After launching a token, access the comprehensive dashboard through:
+1. **From Project Management**: Click "View Dashboard" button
+2. **From Saved Projects**: Select project and click "Dashboard"
+3. **From Launch History**: Click on any launched project
 
-1. **Open** the failed launch in Vantage
-2. **Click** "Relaunch" button
-3. **Modify** settings if needed (optional)
-4. **Click** "Launch Again" 
-5. **New token** deploys with same/updated settings
+### Dashboard Overview
 
-### Batch Launching
+#### Integrated Header
+- **Vantage Branding**: Consistent logo and branding
+- **Settings Access**: Quick access to extension settings
+- **Project Context**: Current project ID and platform display
 
-For multiple token launches:
-
-1. **Create** multiple launch configurations
-2. **Prepare** all launches in stealth mode
-3. **Schedule** launches with delays between them
-4. **Execute** launches in sequence
-
-### Advanced Sniper Protection Settings
-
-#### Protection Levels
-- **Low**: Basic bot detection (30 seconds)
-- **Medium**: Standard protection (60 seconds) 
-- **High**: Maximum protection (90 seconds)
-- **Custom**: Set your own duration and rules
-
-#### Custom Rules
-```javascript
-// Example custom sniper rule
-{
-  "maxTransactionSize": "1000000", // 1M tokens max per tx
-  "minTimeBetweenTx": "5000", // 5 seconds between transactions
-  "blacklistPatterns": ["bot", "sniper", "mev"]
-}
+#### Market Overview Section
+```
+Real-time Market Data:
+📈 Market Cap: Live market capitalization with 24h change
+💰 Token Price: Current price with percentage change
+📊 Trading Volume: 24h volume with trend indicators
 ```
 
-### Analytics and Monitoring
+#### Portfolio Management
+```
+Portfolio Metrics:
+💎 Total SOL Holdings: Across all project wallets
+📈 Profit/Loss Tracking: Real-time P&L calculation
+👥 Active Wallets: Number of wallets with token holdings
+📊 Distribution Analysis: Detailed wallet breakdown
+```
 
-#### Real-time Dashboard
-- **Launch Status**: Live deployment progress
-- **Transaction Monitoring**: All buys/sells in real-time
-- **Sniper Blocks**: Number of blocked bot transactions
-- **Community Metrics**: Holder count, distribution
+### Trading Interface
 
-#### Export Data
-- **CSV Export**: Transaction history and analytics
-- **API Access**: Webhook integrations (coming soon)
-- **Custom Reports**: Detailed launch performance
+#### Direct Trading Features
+- **Buy Orders**: Purchase tokens directly from dashboard
+- **Sell Orders**: Sell tokens with precise amount control
+- **Sell All**: Quick liquidation of all holdings
+- **Multi-Wallet Trading**: Execute trades across multiple wallets
+
+#### Wallet Selection
+```
+Trading Controls:
+✅ Select All Wallets: Trade from all project wallets
+🎯 Individual Selection: Choose specific wallets
+📊 Selection Summary: View selected wallet count
+🔄 Clear Selection: Reset wallet selection
+```
+
+### Wallet Management Dashboard
+
+#### Wallet Display Features
+- **Real-time Balances**: Live SOL and token balance updates
+- **Performance Tracking**: Individual wallet profit/loss
+- **Transaction History**: Complete transaction log per wallet
+- **Selection Controls**: Multi-select for batch operations
+
+#### Wallet Information
+```
+Per-Wallet Data:
+🆔 Wallet ID: Unique identifier
+📍 Address: Full Solana address (abbreviated display)
+💰 Holdings: Current token balance
+📈 P&L: Profit/loss since acquisition
+⏰ Buy Time: Initial purchase timestamp
+```
+
+---
+
+## 🔧 Advanced Features
+
+### Enhanced Sniper Shield
+
+#### Accessing Shield Interface
+1. **Click Shield Button** in footer navigation
+2. **Available from**: Home, History, or any main screen
+3. **Persistent Access**: Always available when needed
+
+#### Protection Status Management
+- **Visual Status Indicator**: Clear active/inactive display
+- **One-Click Toggle**: Enable/disable protection instantly
+- **Real-time Monitoring**: Live protection status updates
+- **Status Descriptions**: Clear explanation of current state
+
+#### Auto-Sell Protection
+```
+Configuration Options:
+📊 Sell Percentage: 25%, 50%, 75%, or 100%
+⏱️ Trigger Delay: Instant, 5s, 10s, or 30s
+🎯 Custom Rules: Advanced trigger conditions
+```
+
+#### Blacklist Management
+```
+Blacklist Features:
+➕ Manual Addition: Add wallet addresses manually
+🤖 Auto-Detection: Automatic bot identification
+🔍 Filter Views: All, auto-detected, or manual
+📊 Statistics: Real-time blocking metrics
+🗑️ Bulk Operations: Clear all or export data
+```
+
+### Instant Relaunch System
+
+#### Relaunch Process
+1. **Access Failed Launch**: From launch history or saved projects
+2. **Click "Relaunch"**: One-click relaunch button
+3. **Modify Settings** (Optional): Update any configuration
+4. **Execute Relaunch**: Deploy with same or updated settings
+
+#### Relaunch Benefits
+- **Speed**: Sub-30-second redeployment
+- **Learning**: Apply lessons from previous attempts
+- **Flexibility**: Modify any settings before relaunch
+- **Cost Efficiency**: No need to reconfigure everything
+
+### Advanced Analytics
+
+#### Launch Performance Tracking
+- **Real-time Metrics**: Live launch progress monitoring
+- **Community Response**: Track holder acquisition
+- **Market Impact**: Price and volume analysis
+- **Success Indicators**: Key performance metrics
+
+#### Historical Analysis
+- **Launch Comparison**: Compare multiple launches
+- **Trend Analysis**: Identify patterns and improvements
+- **Performance Optimization**: Data-driven launch improvements
 
 ---
 
@@ -197,175 +314,192 @@ For multiple token launches:
 ### Pre-Launch Checklist
 
 #### Technical Preparation
-- [ ] Test wallet connection
-- [ ] Verify sufficient SOL balance
-- [ ] Check internet connection stability
-- [ ] Close unnecessary browser tabs
-- [ ] Disable other extensions temporarily
+- [ ] Test wallet connection and verify balance
+- [ ] Complete metadata configuration and review
+- [ ] Set up multi-wallet distribution
+- [ ] Configure sniper protection settings
+- [ ] Test navigation and familiarize with interface
 
 #### Marketing Preparation  
-- [ ] Community announcement ready
-- [ ] Social media posts scheduled
+- [ ] Community announcement prepared and scheduled
+- [ ] Social media posts ready for launch
 - [ ] Influencer coordination confirmed
-- [ ] Launch time communicated
-- [ ] Backup communication channels ready
+- [ ] Launch timing communicated to community
+- [ ] Backup communication channels prepared
 
 #### Content Preparation
-- [ ] Token image optimized and tested
+- [ ] Token image optimized and tested in preview
 - [ ] Description proofread and engaging
-- [ ] Symbol availability checked
-- [ ] Website/social links ready
-- [ ] Whitepaper or documentation complete
+- [ ] Symbol availability verified on platform
+- [ ] Website and social links prepared
+- [ ] Documentation or whitepaper completed
 
-### Launch Timing Strategy
+### Navigation Efficiency Tips
 
-#### Optimal Launch Windows
-- **Peak Hours**: 12-4 PM EST (highest activity)
-- **Weekend Launches**: Saturday 2-6 PM EST
-- **Avoid**: Monday mornings, late nights (low engagement)
-- **Market Conditions**: Launch during green market days
+#### Workflow Optimization
+- **Use Footer Navigation**: Quick access to main features
+- **Leverage State Preservation**: Work saved across navigation
+- **Utilize Back Buttons**: Always clear path to return
+- **Access Settings Globally**: Available from any screen
 
-#### Community Coordination
-- **Pre-announcement**: 24-48 hours before
-- **Final Notice**: 1-2 hours before launch
-- **Live Updates**: Real-time launch progress
-- **Post-launch**: Immediate community engagement
+#### Time-Saving Features
+- **Draft Management**: Save multiple project configurations
+- **Quick Relaunch**: Instant redeployment capability
+- **Batch Operations**: Multi-wallet management
+- **Real-time Updates**: Live data without refresh
+
+
 
 ### Risk Management
 
 #### Financial Safety
-- **Never invest more than you can afford to lose**
-- **Keep emergency SOL** for failed launch recovery
-- **Diversify launch strategies** across different times/approaches
-- **Monitor gas fees** and network congestion
+- **Budget Management**: Never invest more than you can afford to lose
+- **Emergency Reserves**: Keep backup SOL for failed launch recovery
+- **Diversification**: Use multiple launch strategies and timing
+- **Fee Monitoring**: Track gas fees and network congestion
 
 #### Technical Safety
-- **Backup configurations** before launching
-- **Test with small amounts** first
-- **Use stealth mode** for preparation
-- **Have relaunch strategy** ready
+- **Configuration Backup**: Save all launch configurations
+- **Testing Strategy**: Test with small amounts first
+- **Stealth Preparation**: Use stealth mode for thorough preparation
+- **Recovery Planning**: Have relaunch strategy ready
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Common Issues and Solutions
+### Common Navigation Issues
 
-#### Launch Fails to Execute
-**Symptoms**: "Launch Now" button doesn't work or shows error
+#### Footer Not Visible
+**Problem**: Footer navigation not showing
+**Solution**: 
+- Check if you're on a main screen (Home, Shield, History, Disperser)
+- Footer is hidden during project workflows by design
+- Navigate back to home to restore footer
 
-**Solutions**:
-1. **Check wallet connection** - reconnect if needed
-2. **Verify SOL balance** - ensure 0.035+ SOL available
-3. **Refresh extension** - click refresh icon in chrome://extensions/
-4. **Clear browser cache** - restart Chrome completely
-5. **Try incognito mode** - test in private browsing
+#### Back Button Not Working
+**Problem**: Back button doesn't respond
+**Solution**:
+- Refresh the extension by closing and reopening
+- Check browser console for errors
+- Ensure you're not in a modal or overlay
+
+#### State Not Preserved
+**Problem**: Work lost when navigating
+**Solution**:
+- Ensure auto-save is enabled in settings
+- Check browser storage permissions
+- Avoid closing extension during active work
+
+### Dashboard Issues
+
+#### Data Not Loading
+**Problem**: Dashboard shows no data or loading indefinitely
+**Solution**:
+- Check internet connection
+- Verify wallet connection
+- Refresh the dashboard view
+- Check Solana network status
+
+#### Trading Interface Disabled
+**Problem**: Buy/Sell buttons are disabled
+**Solution**:
+- Ensure sufficient SOL balance
+- Verify wallet connection
+- Select at least one wallet for trading
+- Check token launch status
+
+### Launch Problems
+
+#### Launch Fails Immediately
+**Problem**: Launch fails within seconds
+**Solution**:
+- Check SOL balance (minimum 0.035 SOL required)
+- Verify network connection stability
+- Ensure metadata is properly configured
+- Try relaunching with same configuration
 
 #### Sniper Protection Not Working
-**Symptoms**: Bots still buying immediately after launch
+**Problem**: Bots still purchasing during protection window
+**Solution**:
+- Increase protection sensitivity in Shield settings
+- Extend protection duration
+- Check blacklist configuration
+- Monitor protection analytics for effectiveness
 
-**Solutions**:
-1. **Increase protection level** to "High"
-2. **Extend protection duration** to 90+ seconds
-3. **Check custom rules** configuration
-4. **Report suspicious addresses** to Vantage team
-5. **Use multiple protection methods** simultaneously
+### Performance Issues
 
-#### Metadata Not Displaying Correctly
-**Symptoms**: Token image or description not showing on pump.fun
+#### Extension Running Slowly
+**Problem**: Vantage interface is laggy or unresponsive
+**Solution**:
+- Close unnecessary browser tabs
+- Disable other extensions temporarily
+- Clear browser cache and restart
+- Check available system memory
 
-**Solutions**:
-1. **Re-upload image** in different format (PNG vs JPG)
-2. **Reduce image file size** under 2MB
-3. **Check character limits** in name/description
-4. **Wait for propagation** (can take 5-10 minutes)
-5. **Contact pump.fun support** if persistent
+#### Network Connection Problems
+**Problem**: Unable to connect to Solana network
+**Solution**:
+- Check internet connection stability
+- Try different RPC endpoint in settings
+- Verify firewall isn't blocking connections
+- Check Solana network status
 
-#### Extension Performance Issues
-**Symptoms**: Slow loading, freezing, or crashes
+### Recovery Procedures
 
-**Solutions**:
-1. **Close other tabs** to free up memory
-2. **Disable other extensions** temporarily
-3. **Update Chrome browser** to latest version
-4. **Restart browser** completely
-5. **Reinstall Vantage** if problems persist
+#### Lost Configuration
+**Problem**: Project configuration disappeared
+**Solution**:
+- Check Saved Projects for auto-saved drafts
+- Look in browser storage for backup data
+- Use relaunch feature if project was previously launched
+- Contact support with project details
 
-### Error Codes Reference
-
-| Error Code | Meaning | Solution |
-|------------|---------|----------|
-| `VTG001` | Insufficient SOL balance | Add more SOL to wallet |
-| `VTG002` | Wallet connection lost | Reconnect wallet |
-| `VTG003` | Network congestion | Wait and retry |
-| `VTG004` | Invalid metadata | Check image/text format |
-| `VTG005` | Sniper protection timeout | Adjust protection settings |
-
-### Getting Additional Help
-
-If you're still experiencing issues:
-
-1. **Check** the [FAQ](faq.md) for more solutions
-2. **Search** [GitHub Issues](https://github.com/Vantage0x/Vantage/issues) for similar problems
-3. **Join** our [Discord community](https://discord.gg/vantage) for real-time help
-4. **Create** a detailed bug report with:
-   - Error messages or codes
-   - Steps to reproduce
-   - Chrome version and OS
-   - Screenshots if applicable
+#### Wallet Connection Issues
+**Problem**: Cannot connect or wallet disconnected
+**Solution**:
+- Refresh wallet extension
+- Clear wallet cache and reconnect
+- Try different wallet if available
+- Check wallet compatibility with Vantage
 
 ---
 
-## 🎓 Advanced Use Cases
+## 🎓 Advanced Usage Tips
 
-### Community Token Launches
-- **Coordinate** with Discord/Telegram groups
-- **Use polling** to decide launch timing
-- **Implement** fair distribution mechanisms
-- **Engage** community during launch process
+### Power User Features
 
-### Project Utility Tokens
-- **Plan tokenomics** carefully
-- **Consider** long-term utility
-- **Implement** vesting schedules
-- **Coordinate** with development roadmap
+#### Keyboard Shortcuts
+- **Ctrl/Cmd + R**: Refresh current view
+- **Esc**: Close modals and return to previous screen
+- **Tab**: Navigate between form fields efficiently
 
-### Memecoin Experiments
-- **Test** different launch strategies
-- **Analyze** community response patterns
-- **Iterate** based on performance data
-- **Build** on successful launches
+#### Batch Operations
+- **Multi-Wallet Selection**: Select multiple wallets for batch trading
+- **Bulk Configuration**: Apply settings across multiple projects
+- **Mass Export**: Export data from multiple launches
 
----
+#### Automation Features
+- **Auto-Save**: Automatic configuration saving
+- **Smart Defaults**: Intelligent default settings based on usage
+- **Quick Actions**: One-click common operations
 
-## 📊 Success Metrics
+### Integration Tips
 
-Track your launch success with these key metrics:
+#### External Tool Integration
+- **Export Data**: CSV export for external analysis
+- **API Access**: Programmatic access (coming soon)
+- **Webhook Integration**: Real-time notifications
 
-### Immediate Metrics (0-1 hour)
-- **Launch Speed**: Time from click to live (<10 seconds target)
-- **Sniper Blocks**: Number of bot transactions blocked
-- **Initial Holders**: Unique wallet count in first hour
-- **Price Stability**: Minimal price manipulation
-
-### Short-term Metrics (1-24 hours)
-- **Holder Growth**: Rate of new unique holders
-- **Trading Volume**: Total transaction volume
-- **Community Engagement**: Social media activity
-- **Market Cap**: Peak and sustained market cap
-
-### Long-term Metrics (1+ weeks)
-- **Holder Retention**: Percentage of holders still active
-- **Organic Growth**: New holders from organic discovery
-- **Utility Development**: Real-world use case adoption
-- **Community Health**: Active community participation
+#### Community Management
+- **Launch Coordination**: Tools for community launches
+- **Analytics Sharing**: Share performance data with community
+- **Feedback Integration**: Incorporate community suggestions
 
 ---
 
-**Ready to launch your first token?** 🚀
-
-👉 **Next**: [Explore Advanced Features](features.md) | [Check FAQ](faq.md) | [Join Community](https://github.com/Vantage0x/Vantage)
+**Ready to launch your first token?** Start with the [Getting Started](#getting-started) section and follow the step-by-step walkthrough. For additional help, check our [FAQ](faq.md) or join our community discussions.
 
 ---
 
-*Remember: Always do your own research and never invest more than you can afford to lose. Vantage is a tool - success depends on your project, community, and market conditions.* ⚠️ 
+*Vantage: Making memecoin deployment accessible, secure, and successful for everyone.* 🚀 
