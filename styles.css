@@ -1818,6 +1818,13 @@ body.light-mode .saved-projects-title p {
     flex: 1;
     padding: 16px 20px;
     overflow-y: auto;
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.saved-projects-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
 }
 
 .projects-list {
