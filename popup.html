@@ -67,7 +67,7 @@
                         </div>
                         <div class="btn-content">
                             <h3>Get SOL</h3>
-                            <p>Buy Solana tokens</p>
+                            <p>Receive your Solana</p>
                         </div>
                     </button>
 
@@ -207,21 +207,12 @@
                 
                 <!-- Navigation Buttons -->
                 <div class="nav-buttons">
-                    <button class="back-btn" id="backToHomeBtn" title="Back to Home">
+                    <button class="continue-btn" id="backToHomeBtn" title="Back to Home">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M19 12H5"></path>
                             <path d="M12 19l-7-7 7-7"></path>
                         </svg>
-                        <span>Back to Menu</span>
-                    </button>
-                    <button class="delete-project-btn" id="deleteProjectBtn" title="Delete Project">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="3,6 5,6 21,6"></polyline>
-                            <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"></path>
-                            <line x1="10" y1="11" x2="10" y2="17"></line>
-                            <line x1="14" y1="11" x2="14" y2="17"></line>
-                        </svg>
-                        <span>Delete Project</span>
+                        <span>Back to Home</span>
                     </button>
                 </div>
             </div>
@@ -244,13 +235,15 @@
                 <span>Shield</span>
             </button>
             
-            <button class="footer-btn" id="walletBtn" title="Wallet">
+            <button class="footer-btn" id="walletBtn" title="Disperser">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
-                    <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
-                    <circle cx="18" cy="12" r="2"></circle>
+                    <path d="M12 20V12"/>
+                    <path d="M12 12L8 4"/>
+                    <path d="M12 12L16 4"/>
+                    <polygon points="8,4 6,6 10,5" fill="currentColor"/>
+                    <polygon points="16,4 14,5 18,6" fill="currentColor"/>
                 </svg>
-                <span>Wallet</span>
+                <span>Disperser</span>
             </button>
             
             <button class="footer-btn" id="historyBtn" title="Past Launches">
@@ -261,6 +254,626 @@
                 <span>History</span>
             </button>
         </footer>
+    </div>
+
+    <!-- Saved Projects UI -->
+    <div class="saved-projects-ui" id="savedProjectsUI" style="display: none;">
+        <div class="saved-projects-header">
+            <div class="saved-projects-title">
+                <h2>Saved Projects</h2>
+                <p>Your created token projects</p>
+            </div>
+        </div>
+
+        <div class="saved-projects-content">
+            <div class="projects-list" id="projectsList">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+            
+            <div class="empty-projects" id="emptyProjects" style="display: none;">
+                <div class="empty-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <h3>No Projects Yet</h3>
+                <p>Previous projects will appear here</p>
+            </div>
+        </div>
+
+        <div class="saved-projects-footer">
+            <button class="back-to-home-btn" id="backFromSavedProjectsBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                <span>Back to Home</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Project Management UI -->
+    <div class="project-management-ui" id="projectManagementUI" style="display: none;">
+        <div class="project-management-header">
+            <div class="project-management-title">
+                <h2 id="projectManagementName">Project Name</h2>
+                <p id="projectManagementSymbol">$SYMBOL</p>
+            </div>
+        </div>
+
+        <div class="project-id-section">
+            <div class="project-id-left">
+                <span class="project-id-label">Project ID:</span>
+                <span class="project-id-value" id="projectManagementId">VTG-XXXX</span>
+            </div>
+            <span class="project-platform-display" id="projectPlatformDisplay">Platform</span>
+        </div>
+
+        <div class="project-management-content">
+
+            <!-- Management Actions -->
+            <div class="management-actions">
+                <div class="action-row">
+                    <button class="mgmt-btn" id="tokenMetadataBtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>Token Metadata</h3>
+                            <p>View and edit token details</p>
+                        </div>
+                    </button>
+
+                    <button class="mgmt-btn" id="projectWalletsBtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                                <circle cx="18" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>Project Wallets</h3>
+                            <p>Manage project wallets</p>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="action-row">
+                    <button class="mgmt-btn" id="dashboardBtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>Dashboard</h3>
+                            <p>Project analytics & stats</p>
+                        </div>
+                    </button>
+
+                    <button class="mgmt-btn" id="getCABtn">
+                        <div class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="btn-content">
+                            <h3>Get CA</h3>
+                            <p>Get contract address</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Launch Actions -->
+                <div class="launch-section">
+                    <h3 class="launch-title">Launch Options</h3>
+                    <div class="launch-actions">
+                        <button class="launch-btn" id="launchBtn">
+                            <div class="launch-content">
+                                <div class="launch-text">Launch</div>
+                                <div class="launch-subtext">Basic token launch</div>
+                            </div>
+                            <div class="launch-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7"></path>
+                                    <path d="M7 7h10v10"></path>
+                                </svg>
+                            </div>
+                        </button>
+
+                        <button class="launch-btn" id="launchBundleBtn">
+                            <div class="launch-content">
+                                <div class="launch-text">Launch + Bundle</div>
+                                <div class="launch-subtext">Launch with bundling</div>
+                            </div>
+                            <div class="launch-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7"></path>
+                                    <path d="M7 7h10v10"></path>
+                                </svg>
+                            </div>
+                        </button>
+
+                        <button class="launch-btn" id="launchSnipeBtn">
+                            <div class="launch-content">
+                                <div class="launch-text">Launch + Snipe</div>
+                                <div class="launch-subtext">Launch with snipe protection</div>
+                            </div>
+                            <div class="launch-arrow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 17L17 7"></path>
+                                    <path d="M7 7h10v10"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-management-footer">
+            <button class="back-to-projects-btn" id="backToProjectsBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                <span>Back to Projects</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Launch History UI -->
+    <div class="launch-history-ui" id="launchHistoryUI" style="display: none;">
+        <div class="launch-history-header">
+            <div class="launch-history-title">
+                <h2>Launch History</h2>
+                <p>Your previously launched projects</p>
+            </div>
+        </div>
+
+        <div class="launch-history-content">
+            <div class="history-list" id="historyList">
+                <!-- History items will be dynamically loaded here -->
+            </div>
+            
+            <div class="empty-history" id="emptyHistory" style="display: none;">
+                <div class="empty-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                </div>
+                <h3>No Launch History Yet</h3>
+                <p>When you launch your first project, it will appear here with profit/loss tracking</p>
+                <button class="create-first-launch-btn" id="createFirstLaunchBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                    Create Your First Project
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sniper Shield UI -->
+    <div class="sniper-shield-ui" id="sniperShieldUI" style="display: none;">
+        <div class="sniper-shield-header">
+            <div class="sniper-shield-title">
+                <h2>Sniper Shield</h2>
+                <p>Protect your token from bots and snipers</p>
+            </div>
+        </div>
+
+        <div class="sniper-shield-content">
+            <!-- Protection Status -->
+            <div class="shield-status-section">
+                <div class="shield-status-card">
+                    <div class="shield-status-indicator">
+                        <div class="shield-icon active" id="shieldStatusIcon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <div class="shield-status-text">
+                            <h3 id="shieldStatusTitle">Shield Active</h3>
+                            <p id="shieldStatusDescription">Protection is enabled for all your tokens</p>
+                        </div>
+                    </div>
+                    <div class="shield-toggle">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="masterShieldToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auto-Sell Feature -->
+            <div class="auto-sell-section">
+                <div class="section-header">
+                    <h3>Auto-Sell Protection</h3>
+                    <p>Automatically sell tokens when snipers are detected</p>
+                </div>
+                <div class="auto-sell-controls">
+                    <div class="auto-sell-toggle">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="autoSellToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label">Enable Auto-Sell</span>
+                    </div>
+                    <div class="auto-sell-settings" id="autoSellSettings" style="display: none;">
+                        <div class="setting-row">
+                            <label>Sell Percentage:</label>
+                            <select id="autoSellPercentage" class="setting-select">
+                                <option value="25">25%</option>
+                                <option value="50" selected>50%</option>
+                                <option value="75">75%</option>
+                                <option value="100">100%</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label>Trigger Delay:</label>
+                            <select id="autoSellDelay" class="setting-select">
+                                <option value="0">Instant</option>
+                                <option value="5" selected>5 seconds</option>
+                                <option value="10">10 seconds</option>
+                                <option value="30">30 seconds</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blacklist Section -->
+            <div class="blacklist-section">
+                <div class="section-header">
+                    <h3>Sniper Blacklist</h3>
+                    <p>Wallets blocked from entering your tokens</p>
+                </div>
+                
+                <!-- Add Wallet to Blacklist -->
+                <div class="add-blacklist-form">
+                    <div class="input-group">
+                        <input type="text" id="blacklistWalletInput" placeholder="Enter wallet address to blacklist" class="blacklist-input">
+                        <button class="add-blacklist-btn" id="addBlacklistBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                            Add to Blacklist
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Blacklist Stats -->
+                <div class="blacklist-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalBlacklistedCount">0</div>
+                        <div class="stat-label">Total Blacklisted</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="autoDetectedCount">0</div>
+                        <div class="stat-label">Auto-Detected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="manuallyAddedCount">0</div>
+                        <div class="stat-label">Manually Added</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="blockedAttemptsCount">0</div>
+                        <div class="stat-label">Blocked Attempts</div>
+                    </div>
+                </div>
+
+                <!-- Blacklist Filter -->
+                <div class="blacklist-filters">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="auto">Auto-Detected</button>
+                        <button class="filter-tab" data-filter="manual">Manual</button>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="clear-blacklist-btn" id="clearBlacklistBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3,6 5,6 21,6"></polyline>
+                                <path d="M19,6v14a2,2,0,0,1-2,2H7a2,2,0,0,1-2-2V6m3,0V4a2,2,0,0,1,2-2h4a2,2,0,0,1,2,2V6"></path>
+                            </svg>
+                            Clear All
+                        </button>
+                        <button class="export-blacklist-btn" id="exportBlacklistBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Export
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Blacklisted Wallets List -->
+                <div class="blacklist-list" id="blacklistList">
+                    <!-- Blacklisted wallets will be dynamically loaded here -->
+                </div>
+                
+                <div class="empty-blacklist" id="emptyBlacklist" style="display: none;">
+                    <div class="empty-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>No Blacklisted Wallets</h3>
+                    <p>Wallets detected as snipers will appear here automatically</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Token Metadata UI -->
+    <div class="token-metadata-ui" id="tokenMetadataUI" style="display: none;">
+        <div class="token-metadata-header">
+            <div class="token-metadata-title">
+                <h2>Token Metadata</h2>
+                <p>Edit your token's information</p>
+            </div>
+        </div>
+
+        <div class="project-id-section">
+            <span class="project-id-label">Project ID:</span>
+            <span class="project-id-value" id="tokenMetadataProjectId">VTG-XXXX</span>
+        </div>
+
+        <div class="token-metadata-content">
+            <!-- Token Details Section -->
+            <div class="coin-creation-section">
+                <h3>Token Details</h3>
+                <div class="form-group">
+                    <label for="metadataTokenName">Token Name</label>
+                    <input type="text" id="metadataTokenName" placeholder="Enter token name" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label for="metadataTokenSymbol">Token Symbol</label>
+                    <input type="text" id="metadataTokenSymbol" placeholder="e.g., VNTG" maxlength="10">
+                </div>
+                <div class="form-group">
+                    <label for="metadataTokenDescription">Description</label>
+                    <textarea id="metadataTokenDescription" placeholder="Describe your token..." maxlength="500" rows="3"></textarea>
+                </div>
+            </div>
+
+            <!-- Token Image Section -->
+            <div class="form-group token-image-group">
+                <label for="tokenImageInput">Token Image</label>
+                <div class="image-upload-area" id="imageUploadArea">
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <p>Click to select image</p>
+                    </div>
+                </div>
+                <p class="image-requirements">Recommended: 512x512 pixels, PNG or JPG</p>
+            </div>
+
+            <!-- Social Links Section -->
+            <div class="metadata-section">
+                <h3 class="section-title">Social Links</h3>
+                <div class="metadata-form">
+                    <div class="form-group">
+                        <label for="metadataWebsite">Website</label>
+                        <input type="url" id="metadataWebsite" placeholder="https://example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="metadataTwitter">X / Twitter</label>
+                        <input type="url" id="metadataTwitter" placeholder="https://x.com/username">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="metadataTelegram">Telegram</label>
+                        <input type="url" id="metadataTelegram" placeholder="https://t.me/username">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="token-metadata-footer">
+            <!-- Deploy Metadata Button -->
+            <div class="create-project-actions">
+                <button class="deploy-metadata-btn" id="deployMetadataBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Deploy Metadata</span>
+                </button>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="back-to-project-btn" id="backToProjectBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5"></path>
+                        <path d="M12 19l-7-7 7-7"></path>
+                    </svg>
+                    <span>Back to Project</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Wallets UI -->
+    <div class="project-wallets-ui" id="projectWalletsUI" style="display: none;">
+        <div class="project-wallets-header">
+            <h2>Project Wallets</h2>
+            <p class="project-wallets-subtitle">Manage your project wallets</p>
+        </div>
+
+        <div class="project-id-section">
+            <span class="project-id-label">Project ID:</span>
+            <span class="project-id-value" id="walletsProjectId">VTG-XXXX</span>
+        </div>
+
+        <div class="project-wallets-content">
+
+            <!-- Create Wallet Section -->
+            <div class="coin-creation-section">
+                <h3 class="section-title">Create New Wallets</h3>
+                <div class="wallet-creation-form">
+                    <div class="form-group">
+                        <label for="walletQuantity">Number of Wallets</label>
+                        <input type="number" id="walletQuantity" class="wallet-quantity-input" min="1" max="100" placeholder="Enter number (1-100)">
+                    </div>
+                    <div class="create-wallet-actions">
+                        <button class="continue-btn" id="createWalletBtn" disabled>
+                            <span>Create Wallets</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wallets List Section -->
+            <div class="coin-creation-section">
+                <div class="wallets-list" id="walletsList">
+                    <div class="empty-wallets-message" id="emptyWalletsMessage">
+                        <p>No wallets created yet</p>
+                        <small>Create your first wallet to get started</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-wallets-footer">
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="back-to-project-btn" id="backToProjectFromWalletsBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5"></path>
+                        <path d="M12 19l-7-7 7-7"></path>
+                    </svg>
+                    <span>Back to Project</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallet Details Modal -->
+    <div class="modal-overlay" id="walletDetailsModal">
+        <div class="modal wallet-details-modal">
+            <div class="modal-header">
+                <h3 id="walletDetailsTitle">Wallet Details</h3>
+                <button class="close-btn" id="closeWalletDetailsModal">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="wallet-details-content">
+                    <div class="wallet-detail-item">
+                        <label>Public Address:</label>
+                        <div class="address-container">
+                            <span id="walletDetailAddress" class="wallet-full-address">Loading...</span>
+                            <button class="copy-address-btn" id="copyAddressBtn" title="Copy Address">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="wallet-detail-item">
+                        <label>Balance:</label>
+                        <span id="walletDetailBalance" class="wallet-balance-amount">0 SOL</span>
+                    </div>
+                    
+                    <div class="wallet-detail-item private-key-section">
+                        <label>Private Key:</label>
+                        <div class="private-key-container">
+                            <div class="private-key-hidden" id="privateKeyHidden">
+                                <span>••••••••••••••••••••••••••••••••••••••••••••</span>
+                                <button class="reveal-key-btn" id="revealKeyBtn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Show
+                                </button>
+                            </div>
+                            <div class="private-key-revealed" id="privateKeyRevealed" style="display: none;">
+                                <span id="walletDetailPrivateKey" class="private-key-text">Loading...</span>
+                                <button class="copy-key-btn" id="copyKeyBtn" title="Copy Private Key">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                                <button class="hide-key-btn" id="hideKeyBtn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                                        <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 11 8 11 8a13.16 13.16 0 0 1-1.67 2.68"></path>
+                                        <path d="M6.61 6.61A13.526 13.526 0 0 0 1 12s4 8 11 8a9.74 9.74 0 0 0 5.39-1.61"></path>
+                                        <line x1="2" y1="2" x2="22" y2="22"></line>
+                                    </svg>
+                                    Hide
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wallet-details-actions">
+                    <button class="delete-wallet-btn" id="deleteWalletFromDetailsBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3,6 5,6 21,6"></polyline>
+                            <path d="m19,6v14a2,2,0,0,1,-2,2H7a2,2,0,0,1,-2,-2V6m3,0V4a2,2,0,0,1,2,-2h4a2,2,0,0,1,2,2V6"></path>
+                        </svg>
+                        Delete Wallet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Private Key Confirmation Modal -->
+    <div class="modal-overlay" id="privateKeyConfirmModal">
+        <div class="modal private-key-confirm-modal">
+            <div class="modal-header">
+                <h3>Show Private Key</h3>
+            </div>
+            <div class="modal-content">
+                <div class="private-key-warning">
+                    <div class="warning-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <p class="warning-message">Are you sure you want to reveal the private key?</p>
+                    <p class="warning-details"><strong>Warning:</strong> Never share your private key with anyone. Anyone with access to your private key can control your wallet and steal your funds.</p>
+                </div>
+                <div class="private-key-confirm-actions">
+                    <button class="cancel-reveal-btn" id="cancelRevealBtn">Cancel</button>
+                    <button class="confirm-reveal-btn" id="confirmRevealBtn">Show Private Key</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Delete Confirmation Modal -->
@@ -334,6 +947,321 @@
                     <button class="cancel-generate-btn" id="cancelGenerateBtn">Cancel</button>
                     <button class="confirm-generate-btn" id="confirmGenerateBtn">Generate New ID</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Get SOL UI -->
+    <div class="get-sol-ui" id="getSolUI" style="display: none;">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="icons/icon48.png" alt="Vantage Logo" class="logo logo-dark">
+                <img src="icons/icon-light1.png" alt="Vantage Logo" class="logo logo-light">
+                <div class="brand-info">
+                    <h1 class="brand-name">Vantage</h1>
+                    <p class="brand-tagline">Solana Token Launcher</p>
+                </div>
+            </div>
+            <button class="settings-btn" id="settingsBtn" title="Settings">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <div class="get-sol-header">
+            <div class="get-sol-title">
+                <h2>Get SOL</h2>
+                <p>Withdraw SOL from your projects</p>
+            </div>
+        </div>
+
+        <div class="get-sol-content">
+            <div class="projects-sol-list" id="projectsSolList">
+                <!-- Projects with SOL will be dynamically loaded here -->
+            </div>
+            
+            <div class="empty-sol-projects" id="emptySolProjects" style="display: none;">
+                <div class="empty-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M16 8l-4 4-4-4"></path>
+                        <path d="M16 12l-4 4-4-4"></path>
+                    </svg>
+                </div>
+                <h3>No SOL Available</h3>
+                <p>Create projects to start accumulating SOL</p>
+            </div>
+        </div>
+
+        <div class="get-sol-footer">
+            <button class="back-to-home-btn" id="backFromGetSolBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                <span>Back to Home</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- PF Rewards UI -->
+    <div class="pf-rewards-ui" id="pfRewardsUI" style="display: none;">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="icons/icon48.png" alt="Vantage Logo" class="logo logo-dark">
+                <img src="icons/icon-light1.png" alt="Vantage Logo" class="logo logo-light">
+                <div class="brand-info">
+                    <h1 class="brand-name">Vantage</h1>
+                    <p class="brand-tagline">Solana Token Launcher</p>
+                </div>
+            </div>
+            <button class="settings-btn" id="settingsBtn" title="Settings">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <div class="pf-rewards-header">
+            <div class="pf-rewards-title">
+                <h2>PF Rewards</h2>
+                <p>Claim rewards from your projects</p>
+            </div>
+        </div>
+
+        <div class="pf-rewards-content">
+            <div class="projects-rewards-list" id="projectsRewardsList">
+                <!-- Projects with rewards will be dynamically loaded here -->
+            </div>
+            
+            <div class="empty-rewards-projects" id="emptyRewardsProjects" style="display: none;">
+                <div class="empty-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                    </svg>
+                </div>
+                <h3>No Rewards Available</h3>
+                <p>Create projects to start earning rewards</p>
+            </div>
+        </div>
+
+        <div class="pf-rewards-footer">
+            <button class="back-to-home-btn" id="backFromPfRewardsBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                <span>Back to Home</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Contract Address Modal -->
+    <div class="modal-overlay" id="contractAddressModal">
+        <div class="modal contract-address-modal">
+            <div class="modal-header">
+                <h3>Contract Address</h3>
+                <button class="close-btn" id="closeContractAddressModal">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="contract-address-content">
+                    <div class="contract-info">
+                        <div class="project-info-display">
+                            <h4 id="caModalProjectName">Project Name</h4>
+                            <span id="caModalProjectId">VTG-XXXX</span>
+                        </div>
+                        <div class="platform-info-display">
+                            <span id="caModalPlatform">Pump.fun</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contract-address-section">
+                        <label>Contract Address (CA):</label>
+                        <div class="contract-address-container">
+                            <div class="contract-address-box">
+                                <span id="contractAddressValue" class="contract-address-text">Loading...</span>
+                                <button class="copy-contract-btn" id="copyContractBtn" title="Copy Contract Address">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="contract-address-note">This is your token's contract address on <span id="caNotePlatform">Pump.fun</span>. Use this address to interact with your token.</p>
+                    </div>
+
+                    <div class="contract-actions">
+                        <button class="view-on-explorer-btn" id="viewOnExplorerBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15,3 21,3 21,9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            View on Solscan
+                        </button>
+                        <button class="view-on-pumpfun-btn" id="viewOnPumpfunBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15,3 21,3 21,9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            View on Pump.fun
+                        </button>
+                    </div>
+
+                    <div class="contract-status">
+                        <div class="status-indicator" id="contractStatus">
+                            <div class="status-dot"></div>
+                            <span id="contractStatusText">Not Deployed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Dashboard UI -->
+    <div class="project-dashboard-ui" id="projectDashboardUI" style="display: none;">
+        <!-- Dashboard Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="icons/icon48.png" alt="Vantage Logo" class="logo logo-dark">
+                <img src="icons/icon-light1.png" alt="Vantage Logo" class="logo logo-light">
+                <div class="brand-info">
+                    <h1 class="brand-name">Vantage</h1>
+                    <p class="brand-tagline">Solana Token Launcher</p>
+                </div>
+            </div>
+            <button class="settings-btn" id="dashboardSettingsBtn" title="Settings">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <div class="project-id-section">
+            <div class="project-id-left">
+                <span class="project-id-label">Project ID:</span>
+                <span class="project-id-value" id="dashboardProjectId">VTG-XXXX</span>
+            </div>
+            <span class="project-platform-display" id="dashboardPlatformDisplay">Pump.fun</span>
+        </div>
+
+        <div class="project-dashboard-content">
+            <!-- Market Overview -->
+            <div class="dashboard-section">
+                <h3 class="section-title">Market Overview</h3>
+                <div class="market-stats-grid">
+                    <div class="market-stat-card">
+                        <div class="stat-label">Market Cap</div>
+                        <div class="stat-value" id="marketCapValue">$0</div>
+                        <div class="stat-change" id="marketCapChange">+0%</div>
+                    </div>
+                    <div class="market-stat-card">
+                        <div class="stat-label">Price</div>
+                        <div class="stat-value" id="tokenPriceValue">$0.00</div>
+                        <div class="stat-change" id="priceChange">+0%</div>
+                    </div>
+                    <div class="market-stat-card">
+                        <div class="stat-label">24h Volume</div>
+                        <div class="stat-value" id="volumeValue">$0</div>
+                        <div class="stat-change" id="volumeChange">+0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Overview -->
+            <div class="dashboard-section">
+                <h3 class="section-title">Portfolio Overview</h3>
+                <div class="portfolio-stats-grid">
+                    <div class="portfolio-stat-card">
+                        <div class="stat-label">Total SOL Holdings</div>
+                        <div class="stat-value" id="totalSolHoldings">0 SOL</div>
+                    </div>
+                    <div class="portfolio-stat-card">
+                        <div class="stat-label">Total Profit/Loss</div>
+                        <div class="stat-value profit-loss" id="totalProfitLoss">+0 SOL</div>
+                    </div>
+                    <div class="portfolio-stat-card">
+                        <div class="stat-label">Active Wallets</div>
+                        <div class="stat-value" id="activeWalletsCount">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trading Interface -->
+            <div class="dashboard-section">
+                <h3 class="section-title">Trading Interface</h3>
+                <div class="trading-controls">
+                    <div class="trading-input-group">
+                        <label for="tradingAmount">Amount (SOL)</label>
+                        <input type="number" id="tradingAmount" placeholder="0.0" min="0" step="0.001">
+                    </div>
+                    <div class="trading-buttons">
+                        <button class="trading-btn buy-btn" id="buyTokenBtn" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Buy
+                        </button>
+                        <button class="trading-btn sell-btn" id="sellTokenBtn" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Sell
+                        </button>
+                        <button class="trading-btn sell-all-btn" id="sellAllBtn" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg>
+                            Sell All
+                        </button>
+                    </div>
+                </div>
+                <div class="selected-wallets-info">
+                    <span id="selectedWalletsCount">0 wallets selected</span>
+                    <button class="clear-selection-btn" id="clearSelectionBtn" style="display: none;">Clear Selection</button>
+                </div>
+            </div>
+
+            <!-- Wallets List -->
+            <div class="dashboard-section">
+                <div class="wallets-section-header">
+                    <h3 class="section-title">Project Wallets</h3>
+                    <div class="wallet-controls">
+                        <button class="select-all-wallets-btn" id="selectAllWalletsBtn">Select All</button>
+                        <button class="deselect-all-wallets-btn" id="deselectAllWalletsBtn" style="display: none;">Deselect All</button>
+                    </div>
+                </div>
+                <div class="dashboard-wallets-list" id="dashboardWalletsList">
+                    <div class="empty-wallets-message" id="emptyDashboardWalletsMessage">
+                        <p>No wallets found</p>
+                        <small>Create wallets in the Project Wallets section</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-dashboard-footer">
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="back-to-project-btn" id="backToProjectFromDashboardBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5"></path>
+                        <path d="M12 19l-7-7 7-7"></path>
+                    </svg>
+                    <span>Back to Project</span>
+                </button>
             </div>
         </div>
     </div>
